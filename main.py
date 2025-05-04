@@ -1,5 +1,8 @@
 import streamlit as st
+from utils.theming import init_theme, render_theme_toggle
 
+
+init_theme(default="light")
 st.logo("images/lung_cancer_logo_full.png", icon_image='images/lung_cancer_logo_icon.png', size='large')
 
 pages = {
@@ -10,7 +13,7 @@ pages = {
         st.Page("components/about_us.py", title="About us", icon=":material/info:")
     ]
 }
-st.sidebar.button("", icon=":material/light_mode:")
+render_theme_toggle()
 st.sidebar.text("Made by Umantsiv N., 2025")
 
 
