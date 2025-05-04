@@ -1,8 +1,7 @@
 import streamlit as st
-from utils.theming import init_theme, render_theme_toggle
+from utils.theming import render_theme_toggle
 
 
-init_theme(default="light")
 st.logo("images/lung_cancer_logo_full.png", icon_image='images/lung_cancer_logo_icon.png', size='large')
 
 pages = {

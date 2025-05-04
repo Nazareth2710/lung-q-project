@@ -1,13 +1,5 @@
 [theme]
-base = "light"
 primaryColor="#141314"
 backgroundColor="#ecebec"
 secondaryBackgroundColor="#fcf7fd"
 textColor="#160505"
-
-[theme.dark]
-base = "dark"
-primaryColor="#d6d4d5"
-backgroundColor="#2b292a"
-secondaryBackgroundColor="#040805"
-textColor="#f9f9fa"
