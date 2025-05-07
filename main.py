@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.theming import render_theme_toggle
+from utils.localization import set_language
 
 st.logo("images/lung_cancer_logo_full.png", icon_image='images/lung_cancer_logo_icon.png', size='large')
 
@@ -12,7 +13,7 @@ pages = {
     ]
 }
 render_theme_toggle()
-
+set_language()
 st.sidebar.caption("Made by Umantsiv N., 2025")
 
 pg = st.navigation(pages)

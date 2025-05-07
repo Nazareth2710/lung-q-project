@@ -1,9 +1,9 @@
 import streamlit as st
 import pickle
 import numpy as np
+from utils.localization import get_localized_strings
 
-st.title("Оцінка ризику раку легень")
-
+t = get_localized_strings()["form_prediction"]
 
 @st.cache_resource
 def load_model():
@@ -13,57 +13,49 @@ def load_model():
 
 model = load_model()
 
-yes_no = ["Так", "Ні"]
+st.title(t["title"])
+
+yes_no = [t["yes"], t["no"]]
 
 with st.form("prediction_form"):
-    gender = st.selectbox("Стать", ["Чоловічий", "Жіночий"])
-    age = st.slider("Вік", 1, 120, 18)
+    gender = st.selectbox(t["gender"], [t["male"], t["female"]])
+    age = st.slider(t["age"], 1, 120, 18)
 
     col1, col2 = st.columns(2)
 
     with col1:
-        smoking = st.radio("Ви курите?", yes_no, index=None)
-        anxiety = st.radio("Чи відчуваєте ви час від часу тривогу?", yes_no, index=None)
-        chronic_disease = st.radio("Чи маєте ви хронічні захворювання?", yes_no, index=None)
-        allergy = st.radio("Чи маєте ви алергію?", yes_no, index=None)
-        alcohol_consuming = st.radio("Чи вживаєте ви алкоголь?", yes_no, index=None)
-        shortness_of_breath = st.radio("Ви маєте задуху?", yes_no, index=None)
-        chest_pain = st.radio("Чи відчуваєте останнім часом біль у грудях?", yes_no, index=None)
+        smoking = st.radio(t["questions"]["smoking"], yes_no, index=None)
+        anxiety = st.radio(t["questions"]["anxiety"], yes_no, index=None)
+        chronic_disease = st.radio(t["questions"]["chronic_disease"], yes_no, index=None)
+        allergy = st.radio(t["questions"]["allergy"], yes_no, index=None)
+        alcohol_consuming = st.radio(t["questions"]["alcohol_consuming"], yes_no, index=None)
+        shortness_of_breath = st.radio(t["questions"]["shortness_of_breath"], yes_no, index=None)
+        chest_pain = st.radio(t["questions"]["chest_pain"], yes_no, index=None)
 
     with col2:
-        yellow_fingers = st.radio("Чи є у вас жовті пальці?", yes_no, index=None)
-        peer_pressure = st.radio("Чи відчуваєте ви тиск зі сторони сім'ї, робочого колективу чи інших спільнот?", yes_no, index=None)
-        fatigue = st.radio("Ви відчуваєте сильну втому останнім часом?", yes_no, index=None)
-        wheezing = st.radio("Чи є під час глибокого дихання свистіння?", yes_no, index=None)
-        coughing = st.radio("Ви маєте кашель?", yes_no, index=None)
-        swallowing_difficulty = st.radio("Чи є у вас утруднене ковтання?", yes_no, index=None)
+        yellow_fingers = st.radio(t["questions"]["yellow_fingers"], yes_no, index=None)
+        peer_pressure = st.radio(t["questions"]["peer_pressure"], yes_no, index=None)
+        fatigue = st.radio(t["questions"]["fatigue"], yes_no, index=None)
+        wheezing = st.radio(t["questions"]["wheezing"], yes_no, index=None)
+        coughing = st.radio(t["questions"]["coughing"], yes_no, index=None)
+        swallowing_difficulty = st.radio(t["questions"]["swallowing_difficulty"], yes_no, index=None)
 
-    submit = st.form_submit_button("Оцінити ризик")
-
+    submit = st.form_submit_button(t["submit"])
 
 if submit:
     radio_answers = [
-        smoking,
-        yellow_fingers,
-        anxiety,
-        peer_pressure,
-        chronic_disease,
-        fatigue,
-        allergy,
-        wheezing,
-        alcohol_consuming,
-        coughing,
-        shortness_of_breath,
-        swallowing_difficulty,
-        chest_pain
+        smoking, yellow_fingers, anxiety, peer_pressure, chronic_disease,
+        fatigue, allergy, wheezing, alcohol_consuming, coughing,
+        shortness_of_breath, swallowing_difficulty, chest_pain
     ]
 
     if any(ans is None for ans in radio_answers):
-        st.warning("Будь ласка, дайте відповідь на всі запитання, перш ніж продовжити.", icon=":material/warning:")
+        st.warning(t["warning_unanswered"], icon=":material/warning:")
     else:
-        def to_binary(val): return 1 if val == "Так" else 0
+        def to_binary(val): return 1 if val == t["yes"] else 0
 
-        gender_val = 1 if gender == "Чоловічий" else 0
+        gender_val = 1 if gender == t["male"] else 0
+
         input_data = np.array([[
             gender_val,
             age,
@@ -85,10 +77,10 @@ if submit:
         probabilities = model.predict_proba(input_data)[0]
         risk_percent = round(probabilities[1] * 100, 2)
 
-        st.subheader("Результат:")
+        st.subheader(t["results"]["title"])
         if risk_percent >= 65:
-            st.error(f"Високий ризик: {risk_percent}% ймовірності захворювання на рак легень.", icon=":material/priority_high:")
+            st.error(t["results"]["high"].format(risk=risk_percent), icon=":material/priority_high:")
         elif risk_percent >= 30:
-            st.warning(f"Середній ризик: {risk_percent}% ймовірності захворювання на рак легень.", icon=":material/warning:")
+            st.warning(t["results"]["medium"].format(risk=risk_percent), icon=":material/warning:")
         else:
-            st.success(f"Низький ризик: {risk_percent}% ймовірності захворювання на рак легень.", icon=":material/thumb_up:")
+            st.success(t["results"]["low"].format(risk=risk_percent), icon=":material/thumb_up:")

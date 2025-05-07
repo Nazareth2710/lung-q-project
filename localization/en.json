@@ -1,3 +1,34 @@
 {
-
+  "form_prediction": {
+    "title": "Lung Cancer Risk Assessment",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "age": "Age",
+    "yes": "Yes",
+    "no": "No",
+    "questions": {
+      "smoking": "Do you smoke?",
+      "yellow_fingers": "Do you have yellow fingers?",
+      "anxiety": "Do you feel anxious at times?",
+      "peer_pressure": "Do you feel peer pressure from family, work, or other groups?",
+      "chronic_disease": "Do you have any chronic diseases?",
+      "fatigue": "Have you been feeling fatigued lately?",
+      "allergy": "Do you have any allergies?",
+      "wheezing": "Do you wheeze when breathing deeply?",
+      "alcohol_consuming": "Do you consume alcohol?",
+      "coughing": "Do you have a cough?",
+      "shortness_of_breath": "Do you experience shortness of breath?",
+      "swallowing_difficulty": "Do you have difficulty swallowing?",
+      "chest_pain": "Have you recently felt chest pain?"
+    },
+    "submit": "Assess Risk",
+    "warning_unanswered": "Please answer all questions before proceeding.",
+    "results": {
+      "title": "Result:",
+      "high": "High risk: {risk}% probability of having lung cancer.",
+      "medium": "Medium risk: {risk}% probability of having lung cancer.",
+      "low": "Low risk: {risk}% probability of having lung cancer."
+    }
+  }
 }
