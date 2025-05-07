@@ -1,7 +1,6 @@
 import streamlit as st
 from utils.theming import render_theme_toggle
 
-
 st.logo("images/lung_cancer_logo_full.png", icon_image='images/lung_cancer_logo_icon.png', size='large')
 
 pages = {
@@ -13,8 +12,8 @@ pages = {
     ]
 }
 render_theme_toggle()
-st.sidebar.text("Made by Umantsiv N., 2025")
 
+st.sidebar.caption("Made by Umantsiv N., 2025")
 
 pg = st.navigation(pages)
 pg.run()
