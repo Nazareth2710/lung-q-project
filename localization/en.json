@@ -30,5 +30,11 @@
       "medium": "Medium risk: {risk}% probability of having lung cancer.",
       "low": "Low risk: {risk}% probability of having lung cancer."
     }
+  },
+  "pages": {
+    "home": "Home",
+    "info": "Info about Lung Cancer",
+    "prediction": "Predict your Lung risk!",
+    "about": "About us"
   }
 }
