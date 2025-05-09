@@ -4,6 +4,7 @@ import numpy as np
 from utils.localization import get_localized_strings
 
 t = get_localized_strings()["form_prediction"]
+st.image("images/lung-cancer-3.png")
 
 @st.cache_resource
 def load_model():
@@ -13,7 +14,7 @@ def load_model():
 
 model = load_model()
 
-st.image("images/lung-cancer-3.png")
+
 st.title(t["title"])
 
 yes_no = [t["yes"], t["no"]]
