@@ -13,6 +13,7 @@ def load_model():
 
 model = load_model()
 
+st.image("images/lung-cancer-3.png")
 st.title(t["title"])
 
 yes_no = [t["yes"], t["no"]]

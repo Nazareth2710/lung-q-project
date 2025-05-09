@@ -36,5 +36,57 @@
     "info": "Info about Lung Cancer",
     "prediction": "Predict your Lung risk!",
     "about": "About us"
+  },
+  "info_page": {
+    "title": "Lung Cancer Information",
+    "intro": "Learn more about what lung cancer is, its symptoms, causes, and prevention methods. Early detection saves lives.",
+    "what_is_lung_cancer": {
+      "header": "What is Lung Cancer?",
+      "content": "Lung cancer is a malignant tumor that develops in the tissues of one or both lungs. It usually originates in the cells lining the airways and is one of the most common types of cancer worldwide."
+    },
+    "statistics": {
+      "header": "Statistics",
+      "content": "In 2022, approximately 2.5 million new cases of lung cancer were reported, accounting for 12.4% of all new cancer cases. Lung cancer is the leading cause of cancer-related deaths, causing about 1.8 million deaths annually (18.7% of all cancer deaths). It is the most common cancer in men and the second most common in women, following breast cancer."
+    },
+    "symptoms": {
+      "header": "Main Symptoms",
+      "content": "Early-stage lung cancer may not present any symptoms. However, as the disease progresses, symptoms may include a persistent cough that doesn't go away or worsens, coughing up blood or blood-tinged sputum, chest pain that worsens with deep breathing, coughing, or laughing, shortness of breath and difficulty breathing, loss of appetite and unexplained weight loss, fatigue and weakness, hoarseness, and frequent respiratory infections such as bronchitis or pneumonia."
+    },
+    "causes_risk_factors": {
+      "header": "Causes and Risk Factors",
+      "content": "Smoking is the primary cause of lung cancer. In developed countries, up to 90% of lung cancer cases are associated with smoking. Smokers have a 20 times higher risk of developing lung cancer compared to non-smokers. Prolonged exposure to carcinogenic substances such as asbestos, radon, benzene, and other industrial chemicals increases the risk of lung cancer. Air pollution, especially fine particulate matter (PM2.5), is a significant risk factor, particularly for non-smokers. Having first-degree relatives diagnosed with lung cancer increases the risk. The risk of developing lung cancer increases with age, especially after 65."
+    },
+    "diagnosis": {
+      "header": "Diagnosis",
+      "content": "Early detection of lung cancer significantly improves the chances of successful treatment. Key diagnostic methods include chest X-rays to detect tumors or abnormalities in the lungs; computed tomography (CT) scans that provide detailed images of the lungs and can detect even small tumors; bronchoscopy, used to examine the airways and collect tissue samples for biopsy; and positron emission tomography (PET) scans that help determine the cancer's stage and the presence of metastases."
+    },
+    "treatment": {
+      "header": "Treatment",
+      "content": "Treatment options depend on the type, stage of cancer, and the patient's overall health. Main treatments include surgical procedures to remove the tumor or part of the lung; chemotherapy, which uses drugs to kill cancer cells; radiation therapy that uses high doses of radiation to destroy cancer cells; targeted therapy aimed at specific genetic mutations in cancer cells; and immunotherapy that stimulates the immune system to fight cancer."
+    },
+    "prevention": {
+      "header": "Prevention",
+      "content": "Preventing lung cancer includes quitting smoking as the most effective way to reduce risk; avoiding secondhand smoke to minimize exposure to tobacco smoke; protecting yourself from harmful substances by using personal protective equipment at work; maintaining clean air through air purifiers and avoiding polluted environments; and undergoing regular medical checkups, especially for those at higher risk."
+    },
+    "conclusion": "Our app helps assess your risk of developing lung cancer and guides you on whether you should consult a doctor for further examinations.",
+    "sources": [
+      {
+        "title": "WHO: Lung Cancer",
+        "url": "https://www.who.int/ru/news-room/fact-sheets/detail/lung-cancer"
+      },
+      {
+        "title": "National Cancer Institute (NCI): Lung Cancer",
+        "url": "https://www.cancer.gov/types/lung"
+      },
+      {
+        "title": "Wikipedia: Lung Cancer",
+        "url": "https://en.wikipedia.org/wiki/Lung_cancer"
+      }
+    ],
+    "source_title": "Sources"
+  },
+  "home_page": {
+    "title": "Welcome to Lung Q",
+    "description": "This is a simple and user-friendly tool designed to help you get a preliminary assessment of your lung disease risk. By answering a short questionnaire covering common symptoms, lifestyle, chronic conditions, and harmful habits, you'll receive an informative evaluation. It is not a medical diagnosis, but the result can guide you on whether it’s worth consulting a doctor for further examination. Your health is in your hands!"
   }
 }

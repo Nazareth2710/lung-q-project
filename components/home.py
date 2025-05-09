@@ -1,14 +1,12 @@
 import streamlit as st
+from utils.localization import get_localized_strings
 
 def run():
-    st.title("Ласкаво просимо до Lung Q")
-    st.write(
-        """
-        Це простий інтернет-інструмент для оцінки ризику захворювання легенів  
-        за допомогою анкети.  
-        Заповніть кілька питань про свій вік, спосіб життя та симптоми —  
-        і отримаєте попередню оцінку ризику розвитку легеневих захворювань.
-        """
-    )
+    st.image("images/lung-cancer-2.png")
+    t = get_localized_strings()
+
+    st.title(t["home_page"]["title"])
+    st.write(t["home_page"]["description"])
 
 run()
+
