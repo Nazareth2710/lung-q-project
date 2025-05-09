@@ -1,22 +1,14 @@
 import streamlit as st
-import pickle
 import numpy as np
 from utils.localization import get_localized_strings
+from utils.prediction import load_model
 
 t = get_localized_strings()["form_prediction"]
 st.image("images/lung-cancer-3.png")
 
-@st.cache_resource
-def load_model():
-    with open("models/bnb_model.pkl", "rb") as file:
-        model = pickle.load(file)
-    return model
-
 model = load_model()
 
-
 st.title(t["title"])
-
 yes_no = [t["yes"], t["no"]]
 
 with st.form("prediction_form"):
@@ -46,9 +38,19 @@ with st.form("prediction_form"):
 
 if submit:
     radio_answers = [
-        smoking, yellow_fingers, anxiety, peer_pressure, chronic_disease,
-        fatigue, allergy, wheezing, alcohol_consuming, coughing,
-        shortness_of_breath, swallowing_difficulty, chest_pain
+        smoking,
+        yellow_fingers,
+        anxiety,
+        peer_pressure,
+        chronic_disease,
+        fatigue,
+        allergy,
+        wheezing,
+        alcohol_consuming,
+        coughing,
+        shortness_of_breath,
+        swallowing_difficulty,
+        chest_pain
     ]
 
     if any(ans is None for ans in radio_answers):

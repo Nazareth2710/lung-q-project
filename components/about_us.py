@@ -1,15 +1,8 @@
 import streamlit as st
+from utils.localization import get_localized_strings
 
-def run():
-    st.title("Про розробника")
-    st.write(
-        """
-        Додаток розроблений студентом Назаром-Олексієм Уманцівим  
-        в рамках проходження практики для служби екстреної медичної допомоги Закарпатської області.  
-        Мета — створити простий та зрозумілий інструмент  
-        для попередньої оцінки ризику раку легенів  
-        і допомогти людям вчасно звернутися за медичною консультацією.
-        """
-    )
+t = get_localized_strings()
+st.image("images/lung-cancer-4.png")
 
-run()
+st.title(t["about_page"]["title"])
+st.write(t["about_page"]["description"])

@@ -88,5 +88,9 @@
   "home_page": {
     "title": "Welcome to Lung Q",
     "description": "This is a simple and user-friendly tool designed to help you get a preliminary assessment of your lung disease risk. By answering a short questionnaire covering common symptoms, lifestyle, chronic conditions, and harmful habits, you'll receive an informative evaluation. It is not a medical diagnosis, but the result can guide you on whether it’s worth consulting a doctor for further examination. Your health is in your hands!"
+  },
+  "about_page": {
+    "title": "About the Developer",
+    "description": "This application was developed by Nazar-Oleksii Umantsiv, a university student, as part of a practical internship for the Zakarpattya Emergency and Medical Catastrophe Centre.  \nThe primary goal of the project is to create an accessible and user-friendly online tool that allows users to conduct a preliminary assessment of their lung cancer risk.  \nWhile **it does not replace medical consultation**, the app encourages timely attention to possible symptoms and supports informed decisions about seeking professional medical care."
   }
 }

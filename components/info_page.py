@@ -1,13 +1,10 @@
 import streamlit as st
 from utils.localization import get_localized_strings
 
+st.image("images/lung-cancer.png")
 t = get_localized_strings()
 
-st.image("images/lung-cancer.png")
-
 st.title(t["info_page"]["title"])
-
-
 st.markdown(t["info_page"]["intro"])
 
 st.header(t["info_page"]["what_is_lung_cancer"]["header"])
