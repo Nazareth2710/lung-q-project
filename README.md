@@ -28,8 +28,8 @@
 
 1. Клонуйте репозиторій:
 ```bash
-git clone https://github.com/your-username/lung-q.git
-cd lung-q
+git clone https://github.com/Nazareth2710/lung-q-project.git
+cd lung-q-project
 ```
 
 2. Встановіть залежності:
@@ -51,11 +51,11 @@ http://localhost:8501
 
 1. Побудуйте Docker-образ:
 ```bash
-docker build -t lung-q-app .
+docker build -t lung-q-project .
 ```
 
 2. Запустіть контейнер:
 ```bash
-docker run -p 8501:8501 lung-q-app
+docker run -p 8501:8501 lung-q-project
 ```
 
