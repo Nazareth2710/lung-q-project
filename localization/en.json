@@ -26,7 +26,7 @@
     "warning_unanswered": "Please answer all questions before proceeding.",
     "results": {
       "title": "Result:",
-      "high": "High risk: {risk}% probability of having lung cancer. We insist on undergoing a medical examination by a doctor.",
+      "high": "High risk: {risk}% probability of having lung cancer. It is **necessary** to undergo a medical examination by a doctor.",
       "medium": "Medium risk: {risk}% probability of having lung cancer. It is recommended to undergo a medical examination by a doctor.",
       "low": "Low risk: {risk}% probability of having lung cancer."
     }
